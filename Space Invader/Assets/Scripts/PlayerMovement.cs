@@ -5,16 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    int speed = 8; 
+    int speed = 8;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
+    void Movement()
     {
         if (Input.GetKey(KeyCode.A))
         {
@@ -24,5 +17,10 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
         }
+    }
+
+    void Update()
+    {
+        Movement();
     }
 }
