@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     public float bulletForce = 20f;
 
     void Update()
-    { 
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
@@ -24,4 +24,5 @@ public class Bullet : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
+    
 }
