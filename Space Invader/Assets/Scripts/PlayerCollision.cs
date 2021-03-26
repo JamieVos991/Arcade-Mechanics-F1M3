@@ -10,6 +10,7 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("HIT");
             Destroy(other.gameObject);
             this.gameObject.SetActive(false);
+            Destroy(gameObject);
         
     }
 }
