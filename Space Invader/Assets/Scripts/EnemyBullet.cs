@@ -9,8 +9,8 @@ public class EnemyBullet : MonoBehaviour
 
     public static List<GameObject> allAliens = new List<GameObject>();
 
-    private float shootTimer = 3f;
-    private const float shootTime = 3f;
+    private float shootTimer = 1f;
+    private const float shootTime = 1f;
 
     void Start()
     {

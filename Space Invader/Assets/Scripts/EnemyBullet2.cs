@@ -9,6 +9,8 @@ public class EnemyBullet2 : MonoBehaviour
 
     void Update()
     {
+        
         transform.Translate(Vector2.down * Time.deltaTime * speed);
     }
 }
+
