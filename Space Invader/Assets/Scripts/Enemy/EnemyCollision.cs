@@ -15,4 +15,12 @@ public class EnemyCollision : MonoBehaviour
         Destroy(gameObject);
         UIManager.UpdateScore(scoreValue);
     }
+
+    public void Kill()
+    {
+        if (EnemyManager.allAliens.Count == 0)
+        {
+            WaveControl.SpawnNewWave();
+        }
+    }
 }

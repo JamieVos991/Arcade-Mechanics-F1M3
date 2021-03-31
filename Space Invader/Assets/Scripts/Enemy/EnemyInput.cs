@@ -1,0 +1,124 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyInput : MonoBehaviour
+{
+    public GameObject bulletPrefab;
+    public GameObject ufoPrefab;
+
+    private Vector3 hMoveDistance = new Vector3(0.05f, 0, 0);
+    private Vector3 vMoveDistance = new Vector3(0, 0.15f, 0);
+    private Vector3 ufoSpawnPos = new Vector3(14.5f, 5, 0);
+
+    private const float max_left = -12.5f;
+    private const float max_right = 12.5f;
+    private const float max_move_speed = 0.02f; 
+
+    private float moveTimer = 0.01f;
+    private const float moveTime = 0.005f;
+
+    private float shootTimer = 3f;
+    private const float shootTime = 3f;
+
+    private float ufoTimer = 1f;
+    private const float ufo_min = 15f;
+    private const float ufo_max = 60f; 
+
+    private bool movingRight;
+
+    public static List<GameObject> allAliens = new List<GameObject>();
+
+    void Start()
+    {
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Alien"))
+        {
+            allAliens.Add(go); 
+        }
+    }
+
+    void Update()
+    {
+        if (moveTimer <= 0)
+        {
+            MoveEnemies();
+        }
+
+        if (shootTimer <= 0)
+        {
+            Shoot();
+        }
+
+        if (ufoTimer <= 0)
+        {
+            SpawnUfo();
+        }
+
+        moveTimer -= Time.deltaTime;
+        shootTimer -= Time.deltaTime;
+        ufoTimer -= Time.deltaTime;
+    }
+
+    private void MoveEnemies()
+    {
+        if(allAliens.Count > 0)
+        {
+            int hitMax = 0; 
+
+            for (int i = 0; i < allAliens.Count; i++)
+            {
+                if (movingRight)
+                {
+                    allAliens[i].transform.position += hMoveDistance;
+                }
+                else allAliens[i].transform.position -= hMoveDistance;
+
+                if(allAliens[i].transform.position.x > max_right || allAliens[i].transform.position.x < max_left)
+                {
+                    hitMax++;
+                }
+            }
+
+            if(hitMax > 0)
+            {
+                for (int i = 0; i< allAliens.Count; i++)
+                {
+                    allAliens[i].transform.position -= vMoveDistance;
+                }
+
+                movingRight = !movingRight;
+            }
+
+            moveTimer = GetMoveSpeed();
+        }
+    }
+
+    private void Shoot()
+    {
+        Vector2 pos = allAliens[Random.Range(0, allAliens.Count)].transform.position;
+
+        Instantiate(bulletPrefab, pos, Quaternion.identity);
+
+        shootTimer = shootTime;
+    }
+
+    private void SpawnUfo()
+    {
+        Instantiate(ufoPrefab, ufoSpawnPos, Quaternion.identity);
+        ufoTimer = Random.Range(ufo_min, ufo_max);
+    }
+
+    private float GetMoveSpeed()
+    {
+        float f = allAliens.Count * moveTime;
+
+        if (f < max_move_speed)
+        {
+            return max_move_speed;
+        }
+        else
+        {
+            return f;
+        }
+    }
+}

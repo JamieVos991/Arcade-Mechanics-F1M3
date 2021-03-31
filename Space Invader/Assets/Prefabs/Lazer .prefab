@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1644139823935741528}
   - component: {fileID: 1428662754075967862}
+  - component: {fileID: 2996815356102164123}
+  - component: {fileID: -4905407374236073821}
   - component: {fileID: 4435809749760598959}
   - component: {fileID: 3261006887949361242}
-  - component: {fileID: -6554691113357911857}
   m_Layer: 0
   m_Name: 'Lazer '
   m_TagString: Untagged
@@ -85,6 +86,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2996815356102164123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048279311059895637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3cd1ada36b95647b2ce0852793f891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4905407374236073821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048279311059895637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4348ce24064262c42990e44d4b80058a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 2
 --- !u!61 &4435809749760598959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -132,16 +158,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-6554691113357911857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7048279311059895637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4348ce24064262c42990e44d4b80058a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seconds: 2
