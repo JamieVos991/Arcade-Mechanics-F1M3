@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
 
     public void Kill()
     {
+        UIManager.UpdateScore(scoreValue);
+
         EnemyInput.allAliens.Remove(gameObject);
 
         //Instantiate(explosion, transform.position, Quaternion.identity);

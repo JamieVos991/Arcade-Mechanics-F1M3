@@ -5318,6 +5318,7 @@ MonoBehaviour:
   allAliensSets:
   - {fileID: 6413189867617597108, guid: 6a9e80986cf8839439dbce0cd7f2e9f5, type: 3}
   - {fileID: 1403610141741830946, guid: 8c8f35af8087e994ca245c31b2f6c00c, type: 3}
+  - {fileID: 1403610141741830946, guid: 8c8f35af8087e994ca245c31b2f6c00c, type: 3}
 --- !u!4 &574345405
 Transform:
   m_ObjectHideFlags: 0
