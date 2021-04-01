@@ -5788,6 +5788,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7048279311059895637, guid: 4e01ca0cd2cd7b946a3f95a7cae649f5,
         type: 3}
+    - target: {fileID: 126553294113312193, guid: 1e78bde2406a20340a17073ea90224d3,
+        type: 3}
+      propertyPath: shipStats.fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 126553294113312193, guid: 1e78bde2406a20340a17073ea90224d3,
+        type: 3}
+      propertyPath: shipStats.maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 126553294113312193, guid: 1e78bde2406a20340a17073ea90224d3,
+        type: 3}
+      propertyPath: shipStats.shipSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 126553294113312195, guid: 1e78bde2406a20340a17073ea90224d3,
         type: 3}
       propertyPath: m_RootOrder

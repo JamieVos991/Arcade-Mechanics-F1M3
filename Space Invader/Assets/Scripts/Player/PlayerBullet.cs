@@ -7,20 +7,24 @@ public class PlayerBullet : MonoBehaviour
 
     private float speed = 25; 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.up * Time.deltaTime * speed);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-
+        if (other.gameObject.CompareTag("Alien"))
+        {
+            other.gameObject.GetComponent<Enemy>().Kill();
+            Destroy(gameObject);
+            Debug.Log("HIT");
+        }
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+            Debug.Log("HIT");
+        }
     }
 }

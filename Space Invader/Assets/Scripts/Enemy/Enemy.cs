@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int scoreValue;
 
-    // Update is called once per frame
-    void Update()
+    //public GameObject explosion; 
+
+    public void Kill()
     {
-        
+        EnemyInput.allAliens.Remove(gameObject);
+
+        //Instantiate(explosion, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
+
+        Debug.Log("HIT");
     }
 }

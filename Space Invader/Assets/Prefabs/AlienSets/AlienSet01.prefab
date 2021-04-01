@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6734722626270882805}
   - component: {fileID: 4733985813055520404}
   - component: {fileID: 1000171872474076614}
-  - component: {fileID: 2602170211749743556}
+  - component: {fileID: 9112539774335955408}
   m_Layer: 0
   m_Name: enemy-1 (13)
   m_TagString: Alien
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18814364, y: 0.17650923}
   m_EdgeRadius: 0
---- !u!114 &2602170211749743556
+--- !u!114 &9112539774335955408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +119,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 149891156788151556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &853498176869413909
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ GameObject:
   - component: {fileID: 159679897346491658}
   - component: {fileID: 1002404189304935160}
   - component: {fileID: 3312567252268890789}
-  - component: {fileID: 9160568248619296095}
+  - component: {fileID: 5594114686749934513}
   m_Layer: 0
   m_Name: enemy-1 (11)
   m_TagString: Alien
@@ -233,7 +234,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16099665, y: 0.1765092}
   m_EdgeRadius: 0
---- !u!114 &9160568248619296095
+--- !u!114 &5594114686749934513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,10 +243,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 853498176869413909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &1338899294238324760
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +259,7 @@ GameObject:
   - component: {fileID: 8895788680768478486}
   - component: {fileID: 7910631824355919970}
   - component: {fileID: 2386142842607733667}
-  - component: {fileID: 960280645709512994}
+  - component: {fileID: 3269182347771246020}
   m_Layer: 0
   m_Name: enemy-1 (10)
   m_TagString: Alien
@@ -356,7 +358,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.168753, y: 0.1842655}
   m_EdgeRadius: 0
---- !u!114 &960280645709512994
+--- !u!114 &3269182347771246020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,10 +367,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1338899294238324760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &2911559361875718570
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,8 +382,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7488402994743663913}
   - component: {fileID: 2568367919763281212}
-  - component: {fileID: 230077267861254599}
   - component: {fileID: 8311387279154744459}
+  - component: {fileID: 9138032751599982948}
   m_Layer: 0
   m_Name: enemy_2 (1)
   m_TagString: Alien
@@ -453,19 +456,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &230077267861254599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2911559361875718570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 0
 --- !u!61 &8311387279154744459
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -492,6 +482,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &9138032751599982948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2911559361875718570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 10
+  explosion: {fileID: 0}
 --- !u!1 &2961255924180840195
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +507,7 @@ GameObject:
   - component: {fileID: 3781240060089485561}
   - component: {fileID: 7681534054833133857}
   - component: {fileID: 5834516373124614544}
-  - component: {fileID: 2179650242323305836}
+  - component: {fileID: 7946130879062393910}
   m_Layer: 0
   m_Name: enemy-1 (12)
   m_TagString: Alien
@@ -602,7 +606,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17263106, y: 0.1803874}
   m_EdgeRadius: 0
---- !u!114 &2179650242323305836
+--- !u!114 &7946130879062393910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -611,10 +615,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2961255924180840195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &4277517598709732661
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +631,7 @@ GameObject:
   - component: {fileID: 8234481193124323817}
   - component: {fileID: 329353434443406958}
   - component: {fileID: 3640828970468589562}
-  - component: {fileID: 2756014735249198454}
+  - component: {fileID: 4971874400081867494}
   m_Layer: 0
   m_Name: enemy-1 (6)
   m_TagString: Alien
@@ -725,7 +730,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.168753, y: 0.15711859}
   m_EdgeRadius: 0
---- !u!114 &2756014735249198454
+--- !u!114 &4971874400081867494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -734,10 +739,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4277517598709732661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &4550293367557793736
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +755,7 @@ GameObject:
   - component: {fileID: 2596352240514015287}
   - component: {fileID: 6883991986029957475}
   - component: {fileID: 853068173123499915}
-  - component: {fileID: 713690806799489814}
+  - component: {fileID: 3095157779919039729}
   m_Layer: 0
   m_Name: enemy-1 (4)
   m_TagString: Alien
@@ -848,7 +854,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16099665, y: 0.16487485}
   m_EdgeRadius: 0
---- !u!114 &713690806799489814
+--- !u!114 &3095157779919039729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -857,10 +863,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4550293367557793736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &4841266995844116153
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +879,7 @@ GameObject:
   - component: {fileID: 4360514949190541776}
   - component: {fileID: 8560358440767607139}
   - component: {fileID: 7554849234146203573}
-  - component: {fileID: 1876052657971763001}
+  - component: {fileID: 2222029566536989955}
   m_Layer: 0
   m_Name: enemy-1 (7)
   m_TagString: Alien
@@ -971,7 +978,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17263113, y: 0.17650923}
   m_EdgeRadius: 0
---- !u!114 &1876052657971763001
+--- !u!114 &2222029566536989955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -980,10 +987,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4841266995844116153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &5415101823494760093
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +1003,7 @@ GameObject:
   - component: {fileID: 6553160564189713745}
   - component: {fileID: 6416523601210477258}
   - component: {fileID: 2934431682182677164}
-  - component: {fileID: 5397058149726085373}
+  - component: {fileID: 2289851452519066202}
   m_Layer: 0
   m_Name: enemy-1 (3)
   m_TagString: Alien
@@ -1094,7 +1102,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16562049, y: 0.1694801}
   m_EdgeRadius: 0
---- !u!114 &5397058149726085373
+--- !u!114 &2289851452519066202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1103,10 +1111,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5415101823494760093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &6413189867617597108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1125,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1024834322815607144}
-  - component: {fileID: 2299725344773085789}
   - component: {fileID: -2150593257419119635}
   - component: {fileID: 446658352533574405}
   m_Layer: 0
@@ -1154,19 +1162,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2299725344773085789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6413189867617597108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 5
 --- !u!114 &-2150593257419119635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,7 +1201,7 @@ GameObject:
   - component: {fileID: 7920722729516688275}
   - component: {fileID: 8111081083157637015}
   - component: {fileID: 1960322613417737561}
-  - component: {fileID: 8965253365882181252}
+  - component: {fileID: 8961655325376391844}
   m_Layer: 0
   m_Name: enemy-1 (9)
   m_TagString: Alien
@@ -1305,7 +1300,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17650926, y: 0.17263111}
   m_EdgeRadius: 0
---- !u!114 &8965253365882181252
+--- !u!114 &8961655325376391844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1314,10 +1309,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6732772888260153922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &6891395481983826368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,8 +1324,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6544560527924170291}
   - component: {fileID: 7146750194610815091}
-  - component: {fileID: 8519506997634414030}
   - component: {fileID: 110841592521830579}
+  - component: {fileID: 8924965307046876640}
   m_Layer: 0
   m_Name: enemy-1
   m_TagString: Alien
@@ -1402,19 +1398,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8519506997634414030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6891395481983826368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 0
 --- !u!61 &110841592521830579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1441,6 +1424,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15906906, y: 0.15906909}
   m_EdgeRadius: 0
+--- !u!114 &8924965307046876640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891395481983826368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &7758551209100827521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1449,7 @@ GameObject:
   - component: {fileID: 6225752575581912263}
   - component: {fileID: 6007453632796817273}
   - component: {fileID: 2674234228685436207}
-  - component: {fileID: 3408226006258921166}
+  - component: {fileID: 2768689342499806150}
   m_Layer: 0
   m_Name: enemy_2
   m_TagString: Alien
@@ -1551,7 +1548,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &3408226006258921166
+--- !u!114 &2768689342499806150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1560,10 +1557,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7758551209100827521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 10
+  explosion: {fileID: 0}
 --- !u!1 &8914272707764377084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1573,7 @@ GameObject:
   - component: {fileID: 7617922651207550129}
   - component: {fileID: 8835518426219496744}
   - component: {fileID: 1840241004359893588}
-  - component: {fileID: 4270368921262846776}
+  - component: {fileID: 4450648789390987750}
   m_Layer: 0
   m_Name: enemy-1 (5)
   m_TagString: Alien
@@ -1674,7 +1672,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1571186, y: 0.17263111}
   m_EdgeRadius: 0
---- !u!114 &4270368921262846776
+--- !u!114 &4450648789390987750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1683,10 +1681,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8914272707764377084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}
 --- !u!1 &9104551534561406231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1697,7 @@ GameObject:
   - component: {fileID: 8208482748793265621}
   - component: {fileID: 7078779237712315635}
   - component: {fileID: 2488993931600406403}
-  - component: {fileID: 4508145606215000786}
+  - component: {fileID: 628017478853186211}
   m_Layer: 0
   m_Name: enemy-1 (8)
   m_TagString: Alien
@@ -1797,7 +1796,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17650925, y: 0.1765092}
   m_EdgeRadius: 0
---- !u!114 &4508145606215000786
+--- !u!114 &628017478853186211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1806,7 +1805,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9104551534561406231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39664f2bf1f0f1741b417363a13c99dc, type: 3}
+  m_Script: {fileID: 11500000, guid: a137c9d828fe62940b90914c125810ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 5
+  explosion: {fileID: 0}

@@ -8,6 +8,8 @@ TagManager:
   - Alien
   - EnemyBullet
   - Playerr
+  - AIien
+  - a
   layers:
   - Default
   - TransparentFX
