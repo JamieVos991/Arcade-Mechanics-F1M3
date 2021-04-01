@@ -8,6 +8,9 @@ public class PlayerInput : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    private Vector2 offScreenPos = new Vector2(0, -20);
+    private Vector2 startPos = new Vector2(0, -6);
+
     private const float max_left = -12.5f;
     private const float max_right = 12.5f;
 
@@ -16,7 +19,9 @@ public class PlayerInput : MonoBehaviour
     private void Start()
     {
         shipStats.currentHealth = shipStats.maxHealth;
-        shipStats.currentLives = shipStats.maxLives; 
+        shipStats.currentLives = shipStats.maxLives;
+
+        transform.position = startPos;
     }
 
     void Update()
@@ -52,8 +57,7 @@ public class PlayerInput : MonoBehaviour
             }
             else
             {
-                Debug.Log("Respawning...");
-                //Respawn
+                StartCoroutine(Respawn());
             }
         }
     }
@@ -64,6 +68,17 @@ public class PlayerInput : MonoBehaviour
         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(shipStats.fireRate);
         isShooting = false;
+    }
+
+    private IEnumerator Respawn()
+    {
+        transform.position = offScreenPos;
+
+        yield return new WaitForSeconds(2);
+
+        shipStats.currentHealth = shipStats.maxHealth;
+
+        transform.position = startPos;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

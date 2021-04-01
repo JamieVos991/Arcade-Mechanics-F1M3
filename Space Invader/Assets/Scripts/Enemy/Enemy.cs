@@ -14,6 +14,11 @@ public class Enemy : MonoBehaviour
 
         //Instantiate(explosion, transform.position, Quaternion.identity);
 
+        if(EnemyInput.allAliens.Count == 0)
+        {
+            WaveControl.SpawnNewWave();
+        }
+
         Destroy(gameObject);
 
         Debug.Log("HIT");

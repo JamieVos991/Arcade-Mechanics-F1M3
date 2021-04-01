@@ -12,6 +12,7 @@ public class EnemyInput : MonoBehaviour
     private Vector3 ufoSpawnPos = new Vector3(14.5f, 5, 0);
 
     private const float max_left = -12.5f;
+    private const float start_y = 4f; 
     private const float max_right = 12.5f;
     private const float max_move_speed = 0.02f; 
 
@@ -26,6 +27,7 @@ public class EnemyInput : MonoBehaviour
     private const float ufo_max = 60f; 
 
     private bool movingRight;
+    private bool entering = true;
 
     public static List<GameObject> allAliens = new List<GameObject>();
 
@@ -39,6 +41,15 @@ public class EnemyInput : MonoBehaviour
 
     void Update()
     {
+        if (entering)
+        {
+            transform.Translate(Vector2.down * Time.deltaTime * 10);
+
+            if (transform.position.y <= start_y)
+            {
+                entering = false; 
+            }
+        }
         if (moveTimer <= 0)
         {
             MoveEnemies();
