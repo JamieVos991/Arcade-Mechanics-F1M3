@@ -43,5 +43,6 @@ public class WaveControl : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         currentSet = Instantiate(allAliensSets[Random.Range(0, allAliensSets.Length)], spawnPos, Quaternion.identity);
+        UIManager.UpdateWave();
     }
 }
