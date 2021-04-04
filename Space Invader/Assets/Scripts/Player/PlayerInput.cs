@@ -16,10 +16,13 @@ public class PlayerInput : MonoBehaviour
 
     private bool isShooting; 
 
+    AudioSource BulletShot;
+
     private void Start()
     {
+        BulletShot = GetComponent<AudioSource>();
+
         shipStats.currentHealth = shipStats.maxHealth;
-        shipStats.currentLives = shipStats.maxLives;
 
         transform.position = startPos;
     }
@@ -38,6 +41,7 @@ public class PlayerInput : MonoBehaviour
         
         if (Input.GetKey(KeyCode.Space) && !isShooting)
         {
+            BulletShot.Play();
             StartCoroutine(Shoot());
         }
     }
@@ -45,22 +49,19 @@ public class PlayerInput : MonoBehaviour
     private void TakeDamage()
     {
         shipStats.currentHealth--;
+        UIManager.UpdateLives();
 
         if (shipStats.currentHealth <= 0)
         {
-            shipStats.currentLives--; 
-
-            if(shipStats.currentLives <= 0)
-            {
-                Debug.Log("Game Over!");
-                //Game Over
-            }
-            else
-            {
-                StartCoroutine(Respawn());
-            }
+            Debug.Log("Game Over!");
+            //Game Over
+        }
+        else
+        {
+            StartCoroutine(Respawn());
         }
     }
+
 
     private IEnumerator Shoot()
     {

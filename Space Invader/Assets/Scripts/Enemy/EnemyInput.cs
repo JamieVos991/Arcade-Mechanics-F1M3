@@ -22,9 +22,9 @@ public class EnemyInput : MonoBehaviour
     private float shootTimer = 3f;
     private const float shootTime = 3f;
 
-    private float ufoTimer = 60f;
+    private float ufoTimer = 10f;
     private const float ufo_min = 10f;
-    private const float ufo_max = 50f; 
+    private const float ufo_max = 30f; 
 
     private bool movingRight;
     private bool entering = true;

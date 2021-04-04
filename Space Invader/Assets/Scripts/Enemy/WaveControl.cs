@@ -31,6 +31,7 @@ public class WaveControl : MonoBehaviour
     public static void SpawnNewWave()
     {
         instance.StartCoroutine(instance.SpawnWave());
+       
     }
 
     private IEnumerator SpawnWave()

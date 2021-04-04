@@ -10,9 +10,12 @@ public class UIManager : MonoBehaviour
     private int score;
 
     public TextMeshProUGUI waveText;
-    public int wave; 
+    private int wave;
 
-    private static UIManager instance; 
+    public TextMeshProUGUI lifeText;
+    private int life;
+
+    private static UIManager instance;
 
     private void Awake()
     {
@@ -33,5 +36,11 @@ public class UIManager : MonoBehaviour
     {
         instance.wave++;
         instance.waveText.text = instance.wave.ToString();
+    }
+
+    public static void UpdateLives()
+    {
+        instance.life--;
+        instance.lifeText.text = instance.life.ToString();
     }
 }
