@@ -7,13 +7,10 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    private int score;
+    public int score;
 
     public TextMeshProUGUI waveText;
     private int wave;
-
-    public TextMeshProUGUI lifeText;
-    private int life;
 
     private static UIManager instance;
 
@@ -30,17 +27,12 @@ public class UIManager : MonoBehaviour
     {
         instance.score += 5;
         instance.scoreText.text = instance.score.ToString("000");
+
     }
 
     public static void UpdateWave()
     {
         instance.wave++;
         instance.waveText.text = instance.wave.ToString();
-    }
-
-    public static void UpdateLives()
-    {
-        instance.life--;
-        instance.lifeText.text = instance.life.ToString();
     }
 }

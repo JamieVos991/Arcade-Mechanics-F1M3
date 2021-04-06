@@ -16,11 +16,11 @@ public class EnemyInput : MonoBehaviour
     private const float max_right = 12.5f;
     private const float max_move_speed = 0.02f; 
 
-    private float moveTimer = 0.01f;
+    public float moveTimer = 0.01f;
     private const float moveTime = 0.005f;
 
-    private float shootTimer = 3f;
-    private const float shootTime = 3f;
+    public static float shootTimer = 3f;
+    public const float shootTime = 3f;
 
     private float ufoTimer = 10f;
     private const float ufo_min = 10f;
@@ -41,6 +41,7 @@ public class EnemyInput : MonoBehaviour
 
     void Update()
     {
+
         if (entering)
         {
             transform.Translate(Vector2.down * Time.deltaTime * 10);
@@ -70,7 +71,7 @@ public class EnemyInput : MonoBehaviour
         ufoTimer -= Time.deltaTime;
     }
 
-    private void MoveEnemies()
+    public void MoveEnemies()
     {
         if(allAliens.Count > 0)
         {
