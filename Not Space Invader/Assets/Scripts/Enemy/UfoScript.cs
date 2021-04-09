@@ -19,8 +19,14 @@ public class UfoScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("UFO Hit!");
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+            UIManager.UpdateScore(scoreValue);
+        }
     }
 }

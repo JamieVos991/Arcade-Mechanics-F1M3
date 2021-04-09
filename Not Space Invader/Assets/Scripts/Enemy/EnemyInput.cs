@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyInput : MonoBehaviour
 {
+    private static EnemyInput instance;
+
     public GameObject bulletPrefab;
     public GameObject ufoPrefab;
 
@@ -31,6 +33,15 @@ public class EnemyInput : MonoBehaviour
 
     public static List<GameObject> allAliens = new List<GameObject>();
 
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else Destroy(gameObject);
+    }
+
     void Start()
     {
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Alien"))
@@ -51,24 +62,27 @@ public class EnemyInput : MonoBehaviour
                 entering = false; 
             }
         }
-        if (moveTimer <= 0)
+        else
         {
-            MoveEnemies();
-        }
+            if (moveTimer <= 0)
+            {
+                MoveEnemies();
+            }
 
-        if (shootTimer <= 0)
-        {
-            Shoot();
-        }
+            if (shootTimer <= 0)
+            {
+                Shoot();
+            }
 
-        if (ufoTimer <= 0)
-        {
-            SpawnUfo();
-        }
+            if (ufoTimer <= 0)
+            {
+                SpawnUfo();
+            }
 
-        moveTimer -= Time.deltaTime;
-        shootTimer -= Time.deltaTime;
-        ufoTimer -= Time.deltaTime;
+            moveTimer -= Time.deltaTime;
+            shootTimer -= Time.deltaTime;
+            ufoTimer -= Time.deltaTime;
+        }
     }
 
     public void MoveEnemies()

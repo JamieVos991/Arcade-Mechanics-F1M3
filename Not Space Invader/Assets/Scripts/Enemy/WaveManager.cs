@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveControl : MonoBehaviour
+public class WaveManager : MonoBehaviour
 {
     public GameObject[] allAliensSets;
 
     private GameObject currentSet;
     private Vector2 spawnPos = new Vector2(0, 10);
 
-    private static WaveControl instance;
+    private static WaveManager instance;
 
     private void Awake()
     {
@@ -23,19 +23,29 @@ public class WaveControl : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        SpawnNewWave();
-    }
-
     public static void SpawnNewWave()
     {
         instance.StartCoroutine(instance.SpawnWave());
-       
+    }
+
+    public static void CancelGame()
+    {
+        instance.StopAllCoroutines();
+
+        EnemyInput.allAliens.Clear();
+
+        if(instance.currentSet != null)
+        {
+            Destroy(instance.currentSet);
+        }
+
+        UIManager.ResetUI();
     }
 
     private IEnumerator SpawnWave()
     {
+        EnemyInput.allAliens.Clear();
+
         if (currentSet != null)
         {
             Destroy(currentSet);

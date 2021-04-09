@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
 {
     public int scoreValue;
 
-    //public GameObject explosion; 
 
     public void Kill()
     {
@@ -14,11 +13,9 @@ public class Enemy : MonoBehaviour
 
         EnemyInput.allAliens.Remove(gameObject);
 
-        //Instantiate(explosion, transform.position, Quaternion.identity);
-
         if(EnemyInput.allAliens.Count == 0)
         {
-            WaveControl.SpawnNewWave();
+            WaveManager.SpawnNewWave();
         }
 
         Destroy(gameObject);

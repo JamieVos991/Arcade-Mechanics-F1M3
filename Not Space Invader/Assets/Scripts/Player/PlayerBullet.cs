@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
 
+    public int scoreValue;
+
     private float speed = 25; 
 
     void Update()
@@ -18,13 +20,14 @@ public class PlayerBullet : MonoBehaviour
         {
             other.gameObject.GetComponent<Enemy>().Kill();
             Destroy(gameObject);
-            Debug.Log("HIT");
+            UIManager.UpdateScore(scoreValue);
+            Debug.Log("Alien Hit!");
         }
         if (other.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
-            Debug.Log("HIT");
+            Debug.Log("Enemy Bullet Hit!");
         }
     }
 }
