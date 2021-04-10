@@ -6,39 +6,44 @@ using UnityEngine.UI;
 
 public class PlayerInput : MonoBehaviour
 {
-    public int life = 3;
+    private float speed = 9f; 
+    public static int life = 3;
+
+    private AudioSource shootAudio;
 
     public GameObject bulletPrefab;
 
-    private Vector2 offScreenPos = new Vector2(0, -20);
-    private Vector2 startPos = new Vector2(0, -6);
-
-    private const float max_left = -12.5f;
-    private const float max_right = 12.5f;
+    private const float max_left = -12.7f;
+    private const float max_right = 12.7f;
 
     private bool isShooting;
+    public static bool AudioShoot = false;
 
-
-    private void Start()
+    void Start()
     {
-        transform.position = startPos;
+        shootAudio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.A) && transform.position.x > max_left)
         {
-            transform.Translate(Vector2.left * Time.deltaTime * 9f);
+            transform.Translate(Vector2.left * Time.deltaTime * speed);
         }
 
         if (Input.GetKey(KeyCode.D) && transform.position.x < max_right)
         {
-            transform.Translate(Vector2.right * Time.deltaTime * 9f);
+            transform.Translate(Vector2.right * Time.deltaTime * speed);
         }
 
         if (Input.GetKey(KeyCode.Space) && !isShooting)
         {
             StartCoroutine(Shoot());
+
+            if(AudioShoot == true)
+            {
+                shootAudio.Play();
+            } 
         }
     }
 
@@ -50,15 +55,7 @@ public class PlayerInput : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         isShooting = false;
     }
-
-    /*public IEnumerator Respawn()
-    {
-        transform.position = offScreenPos;
-
-        yield return new WaitForSeconds(2);
-
-        transform.position = startPos;
-    }*/
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

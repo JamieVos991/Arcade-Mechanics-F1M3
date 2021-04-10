@@ -55,5 +55,7 @@ public class WaveManager : MonoBehaviour
 
         currentSet = Instantiate(allAliensSets[Random.Range(0, allAliensSets.Length)], spawnPos, Quaternion.identity);
         UIManager.UpdateWave();
+        EnemyInput.shootTimer -= 0.1f;
+        EnemyInput.shootTime -= 0.1f;
     }
 }

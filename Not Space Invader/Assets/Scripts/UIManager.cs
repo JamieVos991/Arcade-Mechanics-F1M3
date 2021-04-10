@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
     public static void UpdateWave()
     {
         instance.wave++;
+        EnemyInput.shootTimer--;
         instance.waveText.text = instance.wave.ToString();
     }
 

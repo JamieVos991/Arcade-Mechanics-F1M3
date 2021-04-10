@@ -178,6 +178,7 @@ MonoBehaviour:
   ufoPrefab: {fileID: 5501643471766526683, guid: 639f9b87e697c7b48bf6b4ee4c67a21a,
     type: 3}
   moveTimer: 0.01
+  shootTime: 3
 --- !u!1 &1663297817167525844
 GameObject:
   m_ObjectHideFlags: 0

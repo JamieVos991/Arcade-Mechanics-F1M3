@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4436317702136759060}
+  - component: {fileID: -2877769181848111257}
   m_Layer: 0
   m_Name: AlienSet04
   m_TagString: Untagged
@@ -27,10 +28,33 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2598649996658239278}
+  - {fileID: 9142014176282471732}
+  - {fileID: 173657106739183171}
+  - {fileID: 2433890475880292278}
+  - {fileID: 2690660232994646226}
+  - {fileID: 3324259614970419335}
+  - {fileID: 5626139894551770307}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2877769181848111257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2455278983692446000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a60ea1096da47e4a8e72970f7ccc3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6088250961986809803, guid: 115d34489f58176439d11ce74d221282,
+    type: 3}
+  ufoPrefab: {fileID: 5501643471766526683, guid: 639f9b87e697c7b48bf6b4ee4c67a21a,
+    type: 3}
+  moveTimer: 0.01
+  shootTime: 3
 --- !u!1 &3665540853460616117
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +85,7 @@ Transform:
   m_LocalPosition: {x: 5, y: -2, z: 23.753357}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
-  m_Father: {fileID: 2598649996658239278}
+  m_Father: {fileID: 4436317702136759060}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1552139237874862342
@@ -184,7 +208,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -2, z: 23.753357}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
-  m_Father: {fileID: 2598649996658239278}
+  m_Father: {fileID: 4436317702136759060}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8344746497691676297
@@ -307,7 +331,7 @@ Transform:
   m_LocalPosition: {x: 7.5, y: -2, z: 23.753357}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
-  m_Father: {fileID: 2598649996658239278}
+  m_Father: {fileID: 4436317702136759060}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4632578806771252545
@@ -430,7 +454,7 @@ Transform:
   m_LocalPosition: {x: -7.5, y: -2, z: 23.753357}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
-  m_Father: {fileID: 2598649996658239278}
+  m_Father: {fileID: 4436317702136759060}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4206116806380403639
@@ -523,60 +547,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 0
---- !u!1 &7985849364005946479
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2598649996658239278}
-  - component: {fileID: 3402986129763288494}
-  m_Layer: 0
-  m_Name: AlienSet03
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2598649996658239278
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7985849364005946479}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 9142014176282471732}
-  - {fileID: 173657106739183171}
-  - {fileID: 2433890475880292278}
-  - {fileID: 2690660232994646226}
-  - {fileID: 3324259614970419335}
-  - {fileID: 5626139894551770307}
-  m_Father: {fileID: 4436317702136759060}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3402986129763288494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7985849364005946479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a60ea1096da47e4a8e72970f7ccc3b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6088250961986809803, guid: 115d34489f58176439d11ce74d221282,
-    type: 3}
-  ufoPrefab: {fileID: 5501643471766526683, guid: 639f9b87e697c7b48bf6b4ee4c67a21a,
-    type: 3}
-  moveTimer: 0.01
 --- !u!1 &9045997146774512669
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +577,7 @@ Transform:
   m_LocalPosition: {x: -5, y: -2, z: 23.753357}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
-  m_Father: {fileID: 2598649996658239278}
+  m_Father: {fileID: 4436317702136759060}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2775380013874178154
@@ -730,7 +700,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 23.753357}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
-  m_Father: {fileID: 2598649996658239278}
+  m_Father: {fileID: 4436317702136759060}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7469427559022142348

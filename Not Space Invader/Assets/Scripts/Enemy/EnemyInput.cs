@@ -21,8 +21,8 @@ public class EnemyInput : MonoBehaviour
     public float moveTimer = 0.01f;
     private const float moveTime = 0.005f;
 
-    public static float shootTimer = 3f;
-    public const float shootTime = 3f;
+    public static float shootTimer = 3.0f;
+    public static float shootTime = 3.0f;
 
     private float ufoTimer = 10f;
     private const float ufo_min = 10f;
