@@ -18,15 +18,15 @@ public class EnemyInput : MonoBehaviour
     private const float max_right = 12.5f;
     private const float max_move_speed = 0.02f; 
 
-    public float moveTimer = 0.01f;
-    private const float moveTime = 0.005f;
+    public static float moveTimer = 0.01f;
+    public static float moveTime = 0.005f;
 
     public static float shootTimer = 3.0f;
     public static float shootTime = 3.0f;
 
     private float ufoTimer = 10f;
-    private const float ufo_min = 10f;
-    private const float ufo_max = 30f; 
+    private const float ufo_min = 1f;
+    private const float ufo_max = 20f; 
 
     private bool movingRight;
     private bool entering = true;

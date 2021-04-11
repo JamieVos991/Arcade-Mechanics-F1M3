@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class PlayerInput : MonoBehaviour
 {
     private float speed = 9f; 
-    public static int life = 3;
 
     private AudioSource shootAudio;
 
@@ -16,6 +15,7 @@ public class PlayerInput : MonoBehaviour
     private const float max_left = -12.7f;
     private const float max_right = 12.7f;
 
+    public static bool shooting = false;
     private bool isShooting;
     public static bool AudioShoot = false;
 
@@ -36,14 +36,17 @@ public class PlayerInput : MonoBehaviour
             transform.Translate(Vector2.right * Time.deltaTime * speed);
         }
 
-        if (Input.GetKey(KeyCode.Space) && !isShooting)
+        if(shooting == true)
         {
-            StartCoroutine(Shoot());
-
-            if(AudioShoot == true)
+            if (Input.GetKey(KeyCode.Space) && !isShooting)
             {
-                shootAudio.Play();
-            } 
+                StartCoroutine(Shoot());
+
+                if (AudioShoot == true)
+                {
+                    shootAudio.Play();
+                }
+            }
         }
     }
 
@@ -64,11 +67,7 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("Player Hit");
             Destroy(collision.gameObject);
 
-            life -= 1;
-            if (life == 0)
-            {
-                MenuManager.OpenGameOver();
-            }
+            UIManager.UpdateLife();
         }
     }
 }

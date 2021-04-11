@@ -6,6 +6,8 @@ public class UfoScript : MonoBehaviour
 {
     public int scoreValue;
 
+    public GameObject bulletPrefab;
+
     private const float max_left = -17.5f;
     private float speed = 15;
 
@@ -13,7 +15,7 @@ public class UfoScript : MonoBehaviour
     {
         transform.Translate(Vector2.left * Time.deltaTime * speed);
 
-        if(transform.position.x <= max_left)
+        if (transform.position.x <= max_left)
         {
             Destroy(gameObject);
         }

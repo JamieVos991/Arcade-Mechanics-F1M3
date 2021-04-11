@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
 {
     public int scoreValue;
 
-
     public void Kill()
     {
         UIManager.UpdateScore(scoreValue);

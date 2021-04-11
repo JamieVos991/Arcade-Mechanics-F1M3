@@ -65,6 +65,7 @@ public class MenuManager : MonoBehaviour
         instance.gameOverMenu.SetActive(false);
         instance.inGameMenu.SetActive(true);
 
+        PlayerInput.shooting = true;
         PlayerInput.AudioShoot = true;
         WaveManager.SpawnNewWave();
 
@@ -87,6 +88,9 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 0f;
         instance.inGameMenu.SetActive(false);
         instance.pauseMenu.SetActive(true);
+
+        PlayerInput.shooting = false;
+        PlayerInput.AudioShoot = false;
     }
 
     public void ClosePause()
@@ -94,6 +98,10 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1f;
         instance.inGameMenu.SetActive(true);
         instance.pauseMenu.SetActive(false);
+
+        PlayerInput.shooting = true;
+        PlayerInput.AudioShoot = true;
+
     }
 
     public static void ReturnToMainMenu()
@@ -105,10 +113,10 @@ public class MenuManager : MonoBehaviour
         instance.controlsMenu.SetActive(false);
         instance.optionMenu.SetActive(false);
 
+        PlayerInput.shooting = false;
         PlayerInput.AudioShoot = false;
         instance.mainMenu.SetActive(true);
         WaveManager.CancelGame();
-        PlayerInput.life = 3;
         EnemyInput.shootTimer = 3f;
         EnemyInput.shootTime = 3f;
 

@@ -12,7 +12,29 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI waveText;
     private int wave;
 
+    public TextMeshProUGUI lifeText;
+    private int life = 3;
+
+    public static bool bulletSpeedOnWave;
+
     private static UIManager instance;
+
+    public static AudioSource hitSound;
+
+    public void Start()
+    {
+        bulletSpeedOnWave = true;
+
+        hitSound = GetComponent<AudioSource>();
+    }
+
+    public void Update()
+    {
+        if(EnemyInput.shootTimer == 0.1f)
+        {
+            bulletSpeedOnWave = false;
+        }
+    }
 
     private void Awake()
     {
@@ -33,14 +55,33 @@ public class UIManager : MonoBehaviour
     public static void UpdateWave()
     {
         instance.wave++;
-        EnemyInput.shootTimer--;
+
+        if(bulletSpeedOnWave = true)
+        {
+            EnemyInput.shootTimer--;
+        }
+
         instance.waveText.text = instance.wave.ToString();
+    }
+
+    public static void UpdateLife()
+    {
+        hitSound.Play();
+        instance.life -= 1;
+        instance.lifeText.text = instance.life.ToString();
+
+        if (instance.life == 0)
+        {
+            MenuManager.OpenGameOver();
+        }
     }
 
     public static void ResetUI()
     {
+        instance.life = 3;
         instance.score = 0;
         instance.wave = 0;
+        instance.lifeText.text = instance.life.ToString("3");
         instance.scoreText.text = instance.score.ToString("000");
         instance.waveText.text = instance.wave.ToString();
     }
