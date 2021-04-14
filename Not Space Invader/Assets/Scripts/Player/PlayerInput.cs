@@ -19,6 +19,8 @@ public class PlayerInput : MonoBehaviour
     private bool isShooting;
     public static bool AudioShoot = false;
 
+    public static bool bulletSpeedOnWave = true;
+
     void Start()
     {
         shootAudio = GetComponent<AudioSource>();
@@ -26,6 +28,11 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
+        if (EnemyInput.shootTimer == 0.4f)
+        {
+            bulletSpeedOnWave = false;
+        }
+
         if (Input.GetKey(KeyCode.A) && transform.position.x > max_left)
         {
             transform.Translate(Vector2.left * Time.deltaTime * speed);
@@ -40,12 +47,12 @@ public class PlayerInput : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space) && !isShooting)
             {
-                StartCoroutine(Shoot());
-
                 if (AudioShoot == true)
                 {
                     shootAudio.Play();
                 }
+                StartCoroutine(Shoot());
+
             }
         }
     }

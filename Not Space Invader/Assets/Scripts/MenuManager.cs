@@ -40,13 +40,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    /*public void OpenMainMenu()
-    {
-        Time.timeScale = 1f;
-        instance.mainMenu.SetActive(true);
-        instance.inGameMenu.SetActive(false);
-    }*/
-
     public static void OpenGameOver()
     {
         Time.timeScale = 0f;

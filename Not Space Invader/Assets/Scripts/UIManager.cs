@@ -15,25 +15,14 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI lifeText;
     private int life = 3;
 
-    public static bool bulletSpeedOnWave;
-
     private static UIManager instance;
 
     public static AudioSource hitSound;
 
     public void Start()
     {
-        bulletSpeedOnWave = true;
-
         hitSound = GetComponent<AudioSource>();
-    }
 
-    public void Update()
-    {
-        if(EnemyInput.shootTimer == 0.1f)
-        {
-            bulletSpeedOnWave = false;
-        }
     }
 
     private void Awake()
@@ -56,7 +45,7 @@ public class UIManager : MonoBehaviour
     {
         instance.wave++;
 
-        if(bulletSpeedOnWave = true)
+        if(PlayerInput.bulletSpeedOnWave = true)
         {
             EnemyInput.shootTimer--;
         }
