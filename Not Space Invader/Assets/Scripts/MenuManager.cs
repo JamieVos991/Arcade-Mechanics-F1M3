@@ -114,4 +114,10 @@ public class MenuManager : MonoBehaviour
         EnemyInput.shootTime = 3f;
 
     }
+
+    public void Quit()
+    {
+        Debug.Log("You quitted the game!");
+        Application.Quit();
+    }
 }
